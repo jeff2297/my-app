@@ -25,10 +25,40 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      body {
+        font-family: 'Public Sans', sans-serif;
+        background-color: whitesmoke;
+      }
+  
+      .container {
+        height: 100%;
+      }
+  
+      .attribution {
+        font-size: 11px;
+        display: flex;
+        position: relative;
+        top: 34rem;
+      }
+  
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+  
+      .attribution p {
+         margin: 3px;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <div id="root">
+      <div class="attribution">
+        <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></p>
+        <p> Coded by <a href="#">Jeff Chin</a>.</p>
+       </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +69,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
+    
   </body>
 </html>
