@@ -1,38 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  max-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  background-color: white;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 100%;
+}
+
+.header p {
+  display: flex;
+  position: relative;
+  left: 2rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#dark-mode {
+  left: 58rem;
+  top: 3px;
+  font-size: 16px;
+  font-weight: normal;
+  cursor:pointer
+}
+
+.darkMode-icon{
+  display: flex;
+  position: relative;
+  left: 58rem;
+  top: 22px;
+  cursor:pointer
+}
+
+.dark{
+  background-color:hsl(207, 26%, 17%);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input {
+  display: flex;
+  position: relative;
+  left: 2rem;
+  top: 2rem;
+  width: 98%;
+  border: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.icon {
+  display: flex;
+  position: relative;
+  left: -19rem;
+  top: 9px;
 }
+
+.invisible {
+  visibility:hidden
+}
+
+.search{
+  position: relative;
+  left: 10px;
+  height: 2rem;
+  width: 20rem;
+  border: none;
+  box-shadow: 3px 3px 4px grey;
+}
+
+.search::placeholder{
+  position: relative;
+  left: 2.5rem;
+}
+
+
+.filter {
+   display: flex;
+   position: relative;
+   left: 66rem;
+   max-width: 100%;
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  height: 2rem;
+  width: 10rem;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  max-width: 100%;
+}
+
+.filter-icon {
+  display: flex;
+  position: relative;
+  top: 9px;
+  left: -1rem
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  background-color: #f6f6f6;
+  min-width: 160px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover{
+  background-color: rgb(175, 175, 172);
+}
+
+.show {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #f1f1f1;
+  flex-wrap:wrap;
+  max-width: 100%;
+}
+
+.flex-container ol {
+  background-color: white;
+  margin: 35px;
+  height: 16.5rem;
+  width: 12.5rem;
+  font-size: 30px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.flex-container h2{
+  font-size: 16px;
+  text-align: left;
+  position: relative;
+  left: -5px;
+  top: -13px;
+}
+
+.flex-container img{
+   width: 120%;
+   height: 50%;
+   object-fit:cover;
+   position: relative;
+   left: -39px;
+   top: -4px
+}
+
+.flex-container li {
+  list-style: none;
+  font-size: 15px;
+  text-align: left;
+  position: relative;
+  left: -5px;
+  top: -16px;
+}
+
+
+.flexItemDetails {
+  display: none;
+}
+
+
+.back-icon {
+  display: flex;
+  position: relative;
+  left: -10px;
+}
+
+.show1{
+  display: block;
+  position: relative;
+  background-color: white;
+  height: 110vh;
+  top: -1326rem;
+ 
+}
+
+.show2 {
+  display: flexbox;
+  /* position: relative;
+  flex-wrap: wrap;
+  top: -5rem;
+  left: 30rem;
+  text-align: left; */
+}
+
+.show1 button{
+  display: flex;
+  position: relative;
+  left: 3rem;
+  top: 4rem;
+  height:30px;
+  width: 6rem;
+  background-color: white;
+  border: none;
+  box-shadow: 3px 3px 4px grey;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito Sans', sans-serif;
+  cursor: pointer;
+}
+
+.show1 ol{
+  display: flexbox;
+  position: relative;
+  flex-wrap: wrap;
+  top: -5rem;
+  left: 30rem;
+  text-align: left;
+  
+}
+
+.show1 li {
+  list-style-type: none;
+  gap: 10px
+}
+
+.show1 h2 {
+   display: flex;
+   position: relative;
+   left: 32.5rem;
+   top: -5rem;
+   text-align: center;
+}
+
+.show1 img {
+  display: flex;
+  position: relative;
+  left: 3rem; 
+  top: 10rem
+}
+
+.show1 p{
+  display: block;
+  position: relative;
+  left: -22rem;
+  top: 7rem;
+}
+
