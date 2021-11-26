@@ -78,10 +78,7 @@ To see how you can add code snippets, see below:
 ```
 ```js
 function back() {
-  //must remove show1 if not show1 still exist 
-  // and cannot back to main 
-  document.getElementById('show1').classList.remove("show1");
-  document.getElementById('show1').classList.add("flexItemDetails");
+  document.getElementById('show1').classList.toggle("show1");
 }
 //after selecting one element if want to select another.
 select(e) {
@@ -92,7 +89,7 @@ select(e) {
     });
     //must add show1 if not cannot select another element
     //after back
-    document.getElementById('show1').classList.add("show1");
+    document.getElementById('show1').classList.toggle("show1");
   }
 //remove {display:none} class after remove the non-selected
   show(e) {
@@ -139,6 +136,19 @@ select(e) {
         item[0].children[i].classList.add('flexItemDetails')
       }
     }
+  }
+//dark mode
+   darkMode() {
+      document.getElementsByClassName('header')[0].classList.toggle('dark');
+      document.getElementsByClassName('darkMode-icon')[0].classList.toggle('dark-moon');
+      document.getElementsByClassName('search')[0].classList.toggle('dark');
+      document.getElementsByClassName('icon')[0].classList.toggle('dark-icon');
+      document.getElementsByClassName('filter')[0].children[0].classList.toggle('dark');
+      document.getElementsByClassName('filter')[0].children[1].classList.toggle('dark');
+      document.getElementsByClassName('dropdown-content')[0].classList.toggle('dark');
+      document.getElementsByClassName('flex-container')[0].classList.toggle('dark');
+      document.getElementsByClassName('App')[0].classList.toggle('dark');
+   
   }
 ```
 

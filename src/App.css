@@ -40,10 +40,7 @@ body{
   cursor:pointer
 }
 
-.dark{
-  background-color:hsl(207, 26%, 17%);
-  color: white;
-}
+
 
 .input {
   display: flex;
@@ -58,8 +55,9 @@ body{
 .icon {
   display: flex;
   position: relative;
-  left: -19rem;
-  top: 9px;
+  left: 1.5rem;
+  top: -1.5rem;
+  
 }
 
 .invisible {
@@ -85,7 +83,8 @@ body{
    display: flex;
    position: relative;
    left: 66rem;
-   max-width: 100%;
+   top: -12px;
+   width: 12%
 }
 
 .dropbtn {
@@ -179,6 +178,10 @@ body{
 
 .flexItemDetails {
   display: none;
+  position: relative;
+  background-color: white;
+  height: 110vh;
+  top: -1326rem;
 }
 
 
@@ -190,11 +193,6 @@ body{
 
 .show1{
   display: block;
-  position: relative;
-  background-color: white;
-  height: 110vh;
-  top: -1326rem;
- 
 }
 
 .show2 {
@@ -257,5 +255,37 @@ body{
   position: relative;
   left: -22rem;
   top: 7rem;
+}
+
+.dark {
+  background-color:hsl(207, 26%, 17%);
+  color: white;
+}
+
+.dark a {
+  color: white;
+}
+
+.dark ol {
+  background-color:hsl(207, 26%, 17%);
+  color: white;
+}
+
+.dark ol{
+  border: none;
+}
+
+.dark::placeholder {
+  color: white;
+}
+
+.dark-icon{
+  color:white
+}
+
+.dark-moon {
+  display: flex;
+  position: relative;
+  left: 57.5rem;;
 }
 

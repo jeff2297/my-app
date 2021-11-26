@@ -12,14 +12,7 @@ function drop() {
 }
 
 function back() {
-  //must remove show1 if not show1 still exist 
-  // and cannot back to main 
-  document.getElementById('show1').classList.remove("show1");
-  document.getElementById('show1').classList.add("flexItemDetails");
-}
-
-function darkMode(){
-  document.getElementsByClassName('App')[0].classList.add('dark');
+  document.getElementById('show1').classList.toggle("show1");
 }
 
 class App extends React.Component {
@@ -30,8 +23,10 @@ class App extends React.Component {
     this.show = this.show.bind(this);
     this.search = this.search.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.darkMode = this.darkMode.bind(this);
     this.state = {
-      isActive: false,
+     // isActive: false,
+      DataisLoaded: false,
       value: '',
       image: '',
       name: '',
@@ -44,7 +39,7 @@ class App extends React.Component {
       currencies: [],
       languages: [],
       items: [],
-      borders: []
+      borders: [],     
     };
   }
   // ComponentDidMount is used to
@@ -59,7 +54,7 @@ class App extends React.Component {
           DataisLoaded: true
 
         });
-        console.log(json.length)
+        // console.log(json.length)
       })
   }
 
@@ -80,7 +75,7 @@ class App extends React.Component {
     });
     //must add show1 if not cannot select another element
     //after back
-    document.getElementById('show1').classList.add("show1");
+    document.getElementById('show1').classList.toggle("show1");
   }
 
   show(e) {
@@ -129,26 +124,38 @@ class App extends React.Component {
     }
   }
 
+  darkMode() {
+      document.getElementsByClassName('header')[0].classList.toggle('dark');
+      document.getElementsByClassName('darkMode-icon')[0].classList.toggle('dark-moon');
+      document.getElementsByClassName('search')[0].classList.toggle('dark');
+      document.getElementsByClassName('icon')[0].classList.toggle('dark-icon');
+      document.getElementsByClassName('filter')[0].children[0].classList.toggle('dark');
+      document.getElementsByClassName('filter')[0].children[1].classList.toggle('dark');
+      document.getElementsByClassName('dropdown-content')[0].classList.toggle('dark');
+      document.getElementsByClassName('flex-container')[0].classList.toggle('dark');
+      document.getElementsByClassName('App')[0].classList.toggle('dark');
+   
+  }
 
   render() {
-    const { DataisLoaded, items, value, image, name, isActive,
+    const { DataisLoaded, items, value, image, name, 
       nativename, population, region, subregion,
       capital, topleveldomain, currencies, languages, borders } = this.state;
 
     if (!DataisLoaded) return <div>
-      <h1> Pleses wait some time.... </h1>
+      <h1> Please wait some time.... </h1>
     </div>;
     return (
       <div className="App">
         <header className="header">
           <p>Where in the world?</p>
-          <FontAwesomeIcon className="darkMode-icon" icon={faMoon} onClick={darkMode} />
-          <p onClick={darkMode} id="dark-mode">Dark Mode</p>
+          <FontAwesomeIcon className="darkMode-icon" icon={faMoon} onClick={this.darkMode} />
+          <p onClick={this.darkMode} id="dark-mode">Dark Mode</p>
         </header>
 
         <div className="input">
           <form  onSubmit={this.handleSubmit}>
-          <input className="search" type="text" placeholder="Search for a country.." value={this.state.value} onChange={this.search}  />
+          <input className="search" type="text" placeholder="Search for a country.." value={value} onChange={this.search}  />
           <FontAwesomeIcon className="icon" icon={faMagnifyingGlass} />
           </form>
         </div>
@@ -191,13 +198,13 @@ class App extends React.Component {
           }
         </div>
 
-        <div className={isActive ? "show1" : "flexItemDetails"} id="show1">
+        <div className="flexItemDetails" id="show1">
 
           <button id="select-button" onClick={back}>
             <FontAwesomeIcon className="back-icon" icon={faArrowLeft} />
             Back
           </button>
-          <img src={image} alt="selected-image" />
+          <img src={image} alt="selected" />
           <h2>{name}</h2>
           
 
@@ -219,7 +226,6 @@ class App extends React.Component {
   }
 
 }
-
 
 export default App;
 
